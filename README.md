@@ -8,7 +8,7 @@ Let's find out if this is a good idea and how Remix can help us with it?
 - Good understanding of JavaScript or TypeScript
 - It would help to have experience with React, Redux, Node.js and writing FrontEnd and BackEnd applications
 - [Preinstall Node.js, npm](https://nodejs.org/en/download/)
-- We prefer to use `VSCode`, but also cloud IDEs such as [codesandbox](codesandbox.io) (other IDEs are also ok)
+- We prefer to use `VSCode`, but also cloud IDEs such as [codesandbox](https://codesandbox.io) (other IDEs are also ok)
 
 ### Alex Korzhikov
 
