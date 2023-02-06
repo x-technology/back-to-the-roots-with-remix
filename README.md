@@ -32,10 +32,6 @@ JavaScript developer with full-stack experience and frontend passion. He runs a 
 - [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/)
 - [paulcodiny](https://github.com/paulcodiny)
 
----
-
-This workshop will introduce participants to the Remix web framework, a new and innovative full-stack framework that allows developers to focus on building fast, resilient, and user-friendly web applications. The workshop will cover the basics of the framework and will guide participants through the process of building a simple web application from scratch. By the end of the workshop, participants will have a solid understanding of how to use Remix to create web applications that provide a seaml
-
 # Code
 
 - [Movies - CodeSandbox Project](https://codesandbox.io/p/sandbox/wandering-dream-xeomqw?file=%2Fapp%2Froutes%2Fmovies%2F%24movieId.reviews.tsx)
@@ -115,3 +111,7 @@ This workshop will introduce participants to the Remix web framework, a new and 
 - [ ] Pavlik Todos
   - [ ] Pavlik to ask ING FrontEnd Guild Workshop on format
     - March/April offline
+
+---
+
+This workshop will introduce participants to the Remix web framework, a new and innovative full-stack framework that allows developers to focus on building fast, resilient, and user-friendly web applications. The workshop will cover the basics of the framework and will guide participants through the process of building a simple web application from scratch. By the end of the workshop, participants will have a solid understanding of how to use Remix to create web applications that provide a seaml
