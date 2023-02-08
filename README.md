@@ -3,9 +3,34 @@
 The modern web would be different without rich client-side applications supported by powerful frameworks: React, Angular, Vue, Lit, and many others. These frameworks rely on client-side JavaScript, which is their core. However, there are other approaches to rendering. One of them (quite old, by the way) is server-side rendering entirely **without JavaScript**.
 Let's find out if this is a good idea and how Remix can help us with it?
 
----
+## Prerequisites
 
-This workshop will introduce participants to the Remix web framework, a new and innovative full-stack framework that allows developers to focus on building fast, resilient, and user-friendly web applications. The workshop will cover the basics of the framework and will guide participants through the process of building a simple web application from scratch. By the end of the workshop, participants will have a solid understanding of how to use Remix to create web applications that provide a seaml
+- Good understanding of JavaScript or TypeScript
+- It would help to have experience with React, Redux, Node.js and writing FrontEnd and BackEnd applications
+- [Preinstall Node.js, npm](https://nodejs.org/en/download/)
+- We prefer to use `VSCode`, but also cloud IDEs such as [codesandbox](https://codesandbox.io) (other IDEs are also ok)
+
+### Alex Korzhikov
+
+![alex korzhikov photo](https://github.com/x-technology/PizzaScript/blob/main/assets/alex-black-white-open-source.png?raw=true)
+
+Software Engineer, Netherlands
+
+My primary interest is self development and craftsmanship. I enjoy exploring technologies, coding open source and enterprise projects, teaching, speaking and writing about programming - JavaScript, Node.js, TypeScript, Go, Java, Docker, Kubernetes, JSON Schema, DevOps, Web Components, Algorithms 👋 ⚽️ 🧑‍💻 🎧
+
+- [AlexKorzhikov](https://twitter.com/AlexKorzhikov)
+- [korzio](https://github.com/korzio)
+
+### Pavlik Kiselev
+
+![Pavlik](https://github.com/korzio/note/blob/master/docs/workshop/site/workshop/codelabs/assets/team/pavlik.jpg?raw=true)
+
+Software Engineer, Netherlands
+
+JavaScript developer with full-stack experience and frontend passion. He runs a small development agency [codeville.agency](https://codeville.agency/) and likes to talk about technologies they use: React, Remix and Serverless.
+
+- [Pavlik Kiselev](https://www.linkedin.com/in/pavlik-kiselev-06993347/)
+- [paulcodiny](https://github.com/paulcodiny)
 
 # Code
 
@@ -86,3 +111,7 @@ This workshop will introduce participants to the Remix web framework, a new and 
 - [ ] Pavlik Todos
   - [ ] Pavlik to ask ING FrontEnd Guild Workshop on format
     - March/April offline
+
+---
+
+This workshop will introduce participants to the Remix web framework, a new and innovative full-stack framework that allows developers to focus on building fast, resilient, and user-friendly web applications. The workshop will cover the basics of the framework and will guide participants through the process of building a simple web application from scratch. By the end of the workshop, participants will have a solid understanding of how to use Remix to create web applications that provide a seaml
