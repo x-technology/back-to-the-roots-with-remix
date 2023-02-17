@@ -41,18 +41,56 @@ JavaScript developer with full-stack experience and frontend passion. He runs a 
 
 # Meetings
 
+## 2023-02-25
+
+- wow?
+  - [ ] ask twitter, conf
+  - live coding
+    - simpler
+  - practice
+    - more complicated to prepare and conduct
+
 ## 2023-02-17
 
+```
+- Page (movies/shawkank/comments)
+  - List
+    - Item
+    - Item
+    - Item
+  - Item (url=id, fetch)
+  - Comments
+```
+
+pavlik
+- parrallel data load
+- question: load state per component, why should we nest components in data flow?
+
 alex
-- [ ] it could validate routes consistency...
+- [ ] comparison astro, nextjs?
+  - how deep should we go? api overview, or deeper. esbuild configs. is remix treeshaking+transformation+build+runtime wrappers+optimizations+vuejs?
+- it could validate routes consistency...
 - [ ] maybe show the simplest remix implementation?
-  - component
-- [ ] comparison astro, nextjs? -> later. how deep should we go? api overview, or deeper. esbuild configs. is remix treeshaking+transformation+build+runtime wrappers+optimizations?
+   - [ ] timebox todo alex
+    -- 30 min? --
+    express - route - middleware
+      @controller -> route -> express.route
+    index.js:
+      action/route -> backend.js
+      component react -> client.js
+      esbuild + backend.config -> node backend.js + (server.js)?!
+      esbuild + frontend.config -> frontend.js?!
 - [ ] another agenda proposal
   - api overview
   - frameworks overview
   - build your remix like framework
     - is compilation part actually interesting?
+
+- live plans
+  - remix - part II
+  - esbuild
+  - remix theory
+  - astro vs nextjs
 
 ## 2023-02-05
 
