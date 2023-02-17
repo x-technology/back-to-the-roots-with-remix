@@ -41,10 +41,23 @@ JavaScript developer with full-stack experience and frontend passion. He runs a 
 
 # Meetings
 
+## 2023-02-17
+
+alex
+- [ ] it could validate routes consistency...
+- [ ] maybe show the simplest remix implementation?
+  - component
+- [ ] comparison astro, nextjs? -> later. how deep should we go? api overview, or deeper. esbuild configs. is remix treeshaking+transformation+build+runtime wrappers+optimizations?
+- [ ] another agenda proposal
+  - api overview
+  - frameworks overview
+  - build your remix like framework
+    - is compilation part actually interesting?
+
 ## 2023-02-05
 
 - https://github.com/korzio/testcodesandbix.git
-- [ ] remix.run/docs/en/v1/tutorials/jokes
+- [x] remix.run/docs/en/v1/tutorials/jokes
   - https://remix.run/docs/en/v1/tutorials/jokes#build-logout-action
 - [ ] alex
   - [ ] deeper into server side remix? arhictecture, videos
@@ -77,7 +90,7 @@ JavaScript developer with full-stack experience and frontend passion. He runs a 
           - Browser Framework
       - `package.json`
         - Auth, cookies
-      - `@remix-run`, `@remix-run/node`
+      - What are `@remix-run`, `@remix-run/node`, `@remix-run/server-runtime`
       - [Prisma](https://prisma.io/)
       - `invariant` - TypeScript
       > restart needed when db or deps change
