@@ -1,0 +1,20 @@
+{
+  "name": "@esbuild-experiment/app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "build:server": "esbuild index.js --platform=node --bundle --outfile=dist/server.js",
+    "start:dev": "node server.js",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "@esbuild-experiment/server": "1.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.17.10"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

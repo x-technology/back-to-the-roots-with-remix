@@ -1,0 +1,12 @@
+{
+  "name": "@esbuild-experiment/root",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "npx turbo build"
+  },
+  "workspaces": ["packages/*", "app"],
+  "devDependencies": {
+    "turbo": "^1.8.1"
+  }
+}
