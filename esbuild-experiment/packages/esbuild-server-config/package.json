@@ -1,0 +1,16 @@
+{
+  "name": "@esbuild-experiment/esbuild-server-config",
+  "version": "1.0.0",
+  "description": "",
+  "bin": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "esbuild": "0.17.10"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

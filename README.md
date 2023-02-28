@@ -41,6 +41,26 @@ JavaScript developer with full-stack experience and frontend passion. He runs a 
 
 # Meetings
 
+## 2023-03-05
+
+esbuild experiment
+
+```js
+const { action } = require('@esbuild-experiment/server')
+// const { component } = require('@esbuild-experiment/client')
+
+export const action = async (request, reply) => {
+  return { hello: 'world' }
+}
+
+// export const component = () => {
+//   <div>hello world</div>
+// }
+```
+
+tests package.json scripts
+see assets
+
 ## 2023-02-25
 
 - wow?
