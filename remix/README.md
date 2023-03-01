@@ -1,51 +1,53 @@
-# Remix Acoustic Stack
+# Welcome to Remix!
 
-![The Remix Acoustic Stack](/hero-screenshot.png)
-
-This is a minimal Remix stack to serve as a starting point for demos and debugging. If you need to reproduce a bug in Remix, this stack is a good starting point to do so since it has very little outside of Remix. It's also a good tool if you're trying to demo something Remix-specific.
-
-Learn more about [Remix Stacks](https://remix.run/stacks).
-
-```
-yarn create remix --template colbywhite/acoustic-stack
-```
-
-## What's in the stack
-
-- Styling with [Tailwind](https://tailwindcss.com/)
-- Unit testing with [Vitest](https://vitest.dev) and [Testing Library](https://testing-library.com)
-- Code formatting with [Prettier](https://prettier.io)
-- Linting with [ESLint](https://eslint.org)
-- Static Types with [TypeScript](https://typescriptlang.org)
-
-That's it.
-
-Tailwind and Vitest aren't Remix-specific concepts, but if you quickly need to spin up a demo, a basic styling tool and a test runner will help. And a linter/formatter keeps the code clean for others to grok.
-
-If you need more you can fork this and make it your own.
+- [Remix Docs](https://remix.run/docs)
 
 ## Development
 
-```bash
-yarn dev
+From your terminal:
+
+```sh
+npm run dev
 ```
 
 This starts your app in development mode, rebuilding assets on file changes.
 
-## Testing
+## Deployment
 
-### Vitest
+First, build your app for production:
 
-For lower level tests of utilities and individual components, we use `vitest`. We have DOM-specific assertion helpers via [`@testing-library/jest-dom`](https://testing-library.com/jest-dom).
+```sh
+npm run build
+```
 
-### Type Checking
+Then run the app in production mode:
 
-This project uses TypeScript. It's recommended to get TypeScript set up for your editor to get a really great in-editor experience with type checking and auto-complete. To run type checking across the whole project, run `yarn typecheck`.
+```sh
+npm start
+```
 
-### Linting
+Now you'll need to pick a host to deploy it to.
 
-This project uses ESLint for linting. That is configured in `.eslintrc.js`.
+### DIY
 
-### Formatting
+If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
 
-We use [Prettier](https://prettier.io/) for auto-formatting in this project. It's recommended to install an editor plugin (like the [VSCode Prettier plugin](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)) to get auto-formatting on save. There's also a `npm run format` script you can run to format all files in the project.
+Make sure to deploy the output of `remix build`
+
+- `build/`
+- `public/build/`
+
+### Using a Template
+
+When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over your `app/` folder to the new project that's pre-configured for your target server.
+
+```sh
+cd ..
+# create a new project, and pick a pre-configured host
+npx create-remix@latest
+cd my-new-remix-app
+# remove the new project's app (not the old one!)
+rm -rf app
+# copy your app over
+cp -R ../my-old-remix-app/app app
+```

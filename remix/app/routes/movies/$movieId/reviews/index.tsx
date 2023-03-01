@@ -4,6 +4,7 @@ import { Link, Outlet, useParams, useLoaderData } from "@remix-run/react";
 
 import reviews from "../../../../mocks/reviews";
 export const loader = async ({ params: { movieId } }: LoaderArgs) => {
+  await new Promise((resolve) => setTimeout(resolve, 5000));
   const movieReviews = reviews.filter(
     ({ movie_id }) => movieId === String(movie_id)
   );
@@ -14,7 +15,9 @@ export const loader = async ({ params: { movieId } }: LoaderArgs) => {
 
 export default function IndexRoute() {
   const params = useParams();
-  const data = useLoaderData<loader>();
+  console.log(performance.now());
+  const data = useLoaderData<typeof loader>();
+  console.log(performance.now());
 
   return (
     <div className="container">

@@ -5,6 +5,8 @@ import { Link, Outlet, useParams, useLoaderData } from "@remix-run/react";
 import movies from "../../../mocks/movies";
 
 export const loader = async ({ params: { movieId } }: LoaderArgs) => {
+  await new Promise((resolve) => setTimeout(resolve, 5000));
+
   return json({
     movie: movies.find(({ id }) => id.toString() === movieId),
   });
