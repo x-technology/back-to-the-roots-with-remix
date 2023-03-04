@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-const { route, start } = require("./server.js");
+const { route, start: startDevServer } = require("./server.js");
 const { search } = require("./lookup.js");
-const { parse, relative, join } = require("node:path");
+const { parse, relative, join, basename } = require("node:path");
 
 const getURL = (filePath) => {
   const { dir, name } = parse(filePath);
   const relativePath = relative(join(process.cwd(), "dist"), dir);
 
-  console.log("filePath", filePath)
+  console.log("filePath", filePath);
   if (relativePath === "" && name === "index") {
     return "/";
   }
@@ -15,11 +15,11 @@ const getURL = (filePath) => {
   return join(relativePath, name);
 };
 
-(async () => {
+const start = async () => {
   const routes = await search();
   const filteredRoutes = routes
     .filter(({ filePath }) => /\.js$/.test(filePath) && /dist/.test(filePath))
-    .map(({ filePath }) => filePath)
+    .map(({ filePath }) => filePath);
 
   for (const filePath of filteredRoutes) {
     const url = getURL(filePath);
@@ -28,4 +28,13 @@ const getURL = (filePath) => {
   }
 
   start();
-})();
+}
+
+if (process.argv.find(bin => basename(bin) === "dev-server") && process.argv.includes("start")) {
+  startDevServer();
+}
+
+module.exports = {
+  search,
+  getURL,
+};

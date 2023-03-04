@@ -7,6 +7,8 @@ exports.start = async () => {
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);
+  } finally {
+    console.log("start dev server")
   }
 };
 

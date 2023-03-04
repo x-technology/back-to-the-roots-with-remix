@@ -1,7 +1,8 @@
 {
-  "name": "@esbuild-experiment/client",
+  "name": "@esbuild-experiment/web-dev-server",
   "version": "0.1.0",
   "private": true,
+  "bin": "index.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
