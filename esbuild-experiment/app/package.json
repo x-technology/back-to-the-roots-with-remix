@@ -6,11 +6,11 @@
   "type": "module",
   "scripts": {
     "build:server": "esbuild-server-config",
-    "start:dev": "runtime-server",
+    "start:dev": "dev-server",
     "start": "node dist/server.js"
   },
   "devDependencies": {
-    "@esbuild-experiment/runtime-server": "1.0.0",
+    "@esbuild-experiment/dev-server": "1.0.0",
     "@esbuild-experiment/esbuild-server-config": "1.0.0"
   },
   "keywords": [],

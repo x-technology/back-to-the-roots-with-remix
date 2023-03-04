@@ -1,5 +1,5 @@
 {
-  "name": "@esbuild-experiment/runtime-server",
+  "name": "@esbuild-experiment/dev-server",
   "version": "1.0.0",
   "description": "",
   "bin": "index.js",
