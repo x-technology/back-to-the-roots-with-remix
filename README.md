@@ -58,8 +58,18 @@ export const action = async (request, reply) => {
 // }
 ```
 
-tests package.json scripts
 see assets
+
+todos:
+- [x] dev routes server
+- [ ] add esbuild, jsx
+- [ ] dev routes client
+- [ ] react ssr
+- [ ] tests package.json scripts production build
+
+- Remix ws: begin with example
+- Remix ws: ask mentorees help
+
 
 ## 2023-02-25
 

@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "build:server": "esbuild-server-config",
-    "start:dev": "node server.js",
+    "start:dev": "runtime-server",
     "start": "node dist/server.js"
   },
-  "dependencies": {
-    "@esbuild-experiment/server": "1.0.0"
-  },
   "devDependencies": {
+    "@esbuild-experiment/runtime-server": "1.0.0",
     "@esbuild-experiment/esbuild-server-config": "1.0.0"
   },
   "keywords": [],

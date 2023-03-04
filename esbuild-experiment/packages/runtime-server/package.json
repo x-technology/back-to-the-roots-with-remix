@@ -1,8 +1,8 @@
 {
-  "name": "@esbuild-experiment/server",
+  "name": "@esbuild-experiment/runtime-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "bin": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
