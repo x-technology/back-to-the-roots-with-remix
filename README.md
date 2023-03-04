@@ -62,14 +62,19 @@ see assets
 
 todos:
 - [x] dev routes server
-- [ ] add esbuild, jsx
-- [ ] dev routes client
-- [ ] react ssr
-- [ ] tests package.json scripts production build
+- [x] add esbuild, jsx
+  - rename to jsx, add esbuild step leave only server export.
+    dev server build version should work?
+  - change dev server to use esbuild path and run build version
+
+- dev routes client
+- react ssr
+- tests package.json scripts production build
+- add Virtual Machine context for importing routes and components
+- exclude hardcoded "dist" from compile and dev server
 
 - Remix ws: begin with example
 - Remix ws: ask mentorees help
-
 
 ## 2023-02-25
 

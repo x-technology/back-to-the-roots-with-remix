@@ -5,7 +5,9 @@ const { parse, relative, join } = require("node:path");
 
 const getURL = (filePath) => {
   const { dir, name } = parse(filePath);
-  const relativePath = relative(process.cwd(), dir);
+  const relativePath = relative(join(process.cwd(), "dist"), dir);
+
+  console.log("filePath", filePath)
   if (relativePath === "" && name === "index") {
     return "/";
   }
@@ -16,7 +18,7 @@ const getURL = (filePath) => {
 (async () => {
   const routes = await search();
   const filteredRoutes = routes
-    .filter(({ filePath }) => /\.js$/.test(filePath) && !/dist/.test(filePath))
+    .filter(({ filePath }) => /\.js$/.test(filePath) && /dist/.test(filePath))
     .map(({ filePath }) => filePath)
 
   for (const filePath of filteredRoutes) {

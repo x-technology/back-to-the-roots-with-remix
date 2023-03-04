@@ -2,9 +2,9 @@
 // const { component } = require('@esbuild-experiment/client')
 
 export const route = async (request, reply) => {
-  return { hello: 'world' }
+  return { hello: 'world' } // data
 }
 
-// export const component = () => {
-//   <div>hello world</div>
-// }
+export const component = () => {
+  <div>hello world</div>
+}
