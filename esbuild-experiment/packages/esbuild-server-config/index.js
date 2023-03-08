@@ -19,6 +19,7 @@ const routesPlugin = {
         loader: "jsx",
       });
       console.log("result", result.code);
+      // import
 
       return {
         contents: result.code,

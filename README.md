@@ -43,38 +43,44 @@ JavaScript developer with full-stack experience and frontend passion. He runs a 
 
 ## 2023-03-05
 
-esbuild experiment
-
-```js
-const { action } = require('@esbuild-experiment/server')
-// const { component } = require('@esbuild-experiment/web-dev-server')
-
-export const action = async (request, reply) => {
-  return { hello: 'world' }
-}
-
-// export const component = () => {
-//   <div>hello world</div>
-// }
-```
-
-see assets
-
-todos:
-- [x] dev routes server
-- [x] add esbuild, jsx
-  - rename to jsx, add esbuild step leave only server export.
-    dev server build version should work?
-  - change dev server to use esbuild path and run build version
-
-- dev routes client
-- react ssr
-- tests package.json scripts production build
-- add Virtual Machine context for importing routes and components
-- exclude hardcoded "dist" from compile and dev server
-
-- Remix ws: begin with example
-- Remix ws: ask mentorees help
+- pavlik
+  - nextjs - not full ssr, data from api on fe only. new version supports though
+  - next - pretty app
+  - astra?
+- alex
+  - esbuild experiment
+  - see assets
+  - todos:
+    - [x] dev routes server
+    - [x] add esbuild, jsx
+      - rename to jsx, add esbuild step leave only server export.
+        dev server build version should work?
+      - change dev server to use esbuild path and run build version
+    - dev routes client
+    - react ssr
+    - how remix works
+    --- optional ---
+    - tests package.json scripts production build
+    - add Virtual Machine context for importing routes and components
+    - exclude hardcoded "dist" from compile and dev server
+  - [x] Remix ws: begin with example
+  - Remix ws: ask mentorees help
+- agenda
+  - example app
+  - theory - alex
+    - api
+    - overview frameworks
+      - express vs nextjs vs astro vs nextjs
+    - esbuild experiment
+    - how remix works
+  - remix dive in - in practice - pavlik
+    - app notes in depth
+      - what we wanted to achieve
+        - nested requests
+        - ssr
+        - no javascript
+    - overview frameworks
+      - astro vs nextjs
 
 ## 2023-02-25
 
