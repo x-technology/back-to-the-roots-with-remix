@@ -12,7 +12,7 @@ exports.start = async () => {
   }
 };
 
-exports.route = (path, callback) => {
-  console.log("route", path, callback);
+exports.addRoute = (path, callback) => {
+  if (process.env["DEBUG"]) console.log("add route", path);
   fastify.get(path, callback);
 };

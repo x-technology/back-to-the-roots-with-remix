@@ -19,7 +19,7 @@ const walk = async (currentDirPath) => {
   return result;
 };
 
-exports.search = async () => {
-  const files = await walk(join(process.cwd(), "dist"));
+exports.search = async (path = process.cwd()) => {
+  const files = await walk(path);
   return files;
 };

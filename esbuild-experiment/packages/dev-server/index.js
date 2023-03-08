@@ -1,40 +1,50 @@
 #!/usr/bin/env node
-const { route, start: startDevServer } = require("./server.js");
+const { addRoute, start } = require("./server.js");
 const { search } = require("./lookup.js");
 const { parse, relative, join, basename } = require("node:path");
 
 const getURL = (filePath) => {
-  const { dir, name } = parse(filePath);
+  let { dir, name } = parse(filePath);
   const relativePath = relative(join(process.cwd(), "dist"), dir);
 
-  console.log("filePath", filePath);
+
   if (relativePath === "" && name === "index") {
     return "/";
   }
 
-  return join(relativePath, name);
+  if (name === "index") {
+    name = "/";
+  }
+
+  return join("/", relativePath, name);
 };
 
-const start = async () => {
-  const routes = await search();
-  const filteredRoutes = routes
+const addRoutes = async () => {
+  const files = await search(join(process.cwd(), "dist"));
+  const filteredRoutes = files
     .filter(({ filePath }) => /\.js$/.test(filePath) && /dist/.test(filePath))
     .map(({ filePath }) => filePath);
 
+  if (process.env["DEBUG"]) console.log("filteredRoutes", filteredRoutes)
+
   for (const filePath of filteredRoutes) {
     const url = getURL(filePath);
-    const { route: actionRoute } = await import(filePath);
-    route(url, actionRoute);
-  }
 
-  start();
+    if (process.env["DEBUG"]) console.log("add url", url)
+    const { route: actionRoute } = await import(filePath);
+    addRoute(url, actionRoute);
+  }
 }
 
 if (process.argv.find(bin => basename(bin) === "dev-server") && process.argv.includes("start")) {
-  startDevServer();
+  (async () => {
+    await addRoutes();
+    start();
+  })()
 }
 
 module.exports = {
-  search,
   getURL,
+  addRoutes,
+  start,
 };

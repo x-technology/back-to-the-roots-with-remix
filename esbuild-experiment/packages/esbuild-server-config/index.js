@@ -1,24 +1,25 @@
 #!/usr/bin/env node
 import * as esbuild from "esbuild";
-import path from "node:path";
+import {relative} from "node:path";
 import fs from "node:fs";
+import {search} from "@esbuild-experiment/dev-server"
 
 const routesPlugin = {
   name: "routes",
   setup(build) {
     build.onLoad({ filter: /.*/ }, async (args) => {
-      console.log("args", args);
+      if (process.env["DEBUG"]) console.log("args", args);
 
       // Load the file from the file system
       const source = await fs.promises.readFile(args.path, "utf8");
-      const filename = path.relative(process.cwd(), args.path);
-      console.log("source", source, filename);
+      const filename = relative(process.cwd(), args.path);
+      if (process.env["DEBUG"]) console.log("source", source, filename);
 
       const result = await esbuild.transform(source, {
         jsx: "transform",
         loader: "jsx",
       });
-      console.log("result", result.code);
+      if (process.env["DEBUG"]) console.log("result", result.code);
       // import
 
       return {
@@ -28,9 +29,15 @@ const routesPlugin = {
   },
 };
 
+const allFiles = await search()
+const entryPoints = allFiles
+  .filter(({ filePath }) => /\.jsx$/.test(filePath) && !/dist/.test(filePath))
+  .map(({ filePath }) => relative(process.cwd(), filePath));
+
+if (process.env["DEBUG"]) console.log("entryPoints", entryPoints)
+
 await esbuild.build({
-  entryPoints: ["index.jsx"],
-  // bundle: true,
+  entryPoints,
   platform: "node",
   plugins: [routesPlugin],
   loader: { ".js": "jsx" },
