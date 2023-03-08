@@ -2,20 +2,18 @@
 const { addRoute, start } = require("./server.js");
 const { search } = require("./lookup.js");
 const { parse, relative, join, basename } = require("node:path");
+const ReactDOMServer = require("react-dom/server");
+const React = require("react");
 
 const getURL = (filePath) => {
   let { dir, name } = parse(filePath);
   const relativePath = relative(join(process.cwd(), "dist"), dir);
-
-
   if (relativePath === "" && name === "index") {
     return "/";
   }
-
   if (name === "index") {
     name = "/";
   }
-
   return join("/", relativePath, name);
 };
 
@@ -25,22 +23,38 @@ const addRoutes = async () => {
     .filter(({ filePath }) => /\.js$/.test(filePath) && /dist/.test(filePath))
     .map(({ filePath }) => filePath);
 
-  if (process.env["DEBUG"]) console.log("filteredRoutes", filteredRoutes)
+  if (process.env["DEBUG"]) console.log("filteredRoutes", filteredRoutes);
 
   for (const filePath of filteredRoutes) {
     const url = getURL(filePath);
 
-    if (process.env["DEBUG"]) console.log("add url", url)
+    if (process.env["DEBUG"]) console.log("add url", url);
     const { route: actionRoute } = await import(filePath);
     addRoute(url, actionRoute);
   }
-}
 
-if (process.argv.find(bin => basename(bin) === "dev-server") && process.argv.includes("start")) {
+  addReactRoute();
+};
+
+const addReactRoute = () => {
+  addRoute("/react", (request, reply) => {
+    const html = ReactDOMServer.renderToStaticMarkup(
+      React.createElement("h1", { className: "greeting" }, "Hello")
+    );
+
+    reply.header("Content-type", "text/html");
+    reply.send(html);
+  });
+};
+
+if (
+  process.argv.find((bin) => basename(bin) === "dev-server") &&
+  process.argv.includes("start")
+) {
   (async () => {
     await addRoutes();
     start();
-  })()
+  })();
 }
 
 module.exports = {
