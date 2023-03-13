@@ -236,7 +236,9 @@ This workshop will introduce participants to the Remix web framework, a new and 
   - how remix works
   --- optional ---
   - move & optimize transform and export to esbuild plugin
-  - add react router
+    - use esbuild metafile analyze options to get information about outputs
+    https://esbuild.github.io/api/#metafile
+  - add react router?
   - streams instead of file redner to sting
     - hydrate react on client side
   - tests package.json scripts production build
