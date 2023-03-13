@@ -4,6 +4,8 @@ import {relative} from "node:path";
 import fs from "node:fs";
 import {search} from "@esbuild-experiment/dev-server"
 
+const staticImports = `import React from "react";`
+
 const routesPlugin = {
   name: "routes",
   setup(build) {
@@ -15,10 +17,13 @@ const routesPlugin = {
       const filename = relative(process.cwd(), args.path);
       if (process.env["DEBUG"]) console.log("source", source, filename);
 
-      const result = await esbuild.transform(source, {
+      const sourceWithImports = `/** staticImports **/ \n ${staticImports}; \n /** staticImports **/ \n ${source}`;
+
+      const result = await esbuild.transform(sourceWithImports, {
         jsx: "transform",
         loader: "jsx",
       });
+
       if (process.env["DEBUG"]) console.log("result", result.code);
       // import
 

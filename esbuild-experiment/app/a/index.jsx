@@ -2,9 +2,11 @@
 // const { component } = require('@esbuild-experiment/web-dev-server')
 
 export const route = async (request, reply) => {
-  return { hello: 'world' } // data
+  return { hello: 'index-a-world' } // data
 }
 
 export const component = () => {
-  <div>hello world</div>
+  const data = typeof route
+
+  return <div>hello index world</div>
 }

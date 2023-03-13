@@ -3,7 +3,6 @@ const { addRoute, start } = require("./server.js");
 const { search } = require("./lookup.js");
 const { parse, relative, join, basename } = require("node:path");
 const ReactDOMServer = require("react-dom/server");
-const React = require("react");
 
 const getURL = (filePath) => {
   let { dir, name } = parse(filePath);
@@ -29,22 +28,17 @@ const addRoutes = async () => {
     const url = getURL(filePath);
 
     if (process.env["DEBUG"]) console.log("add url", url);
-    const { route: actionRoute } = await import(filePath);
-    addRoute(url, actionRoute);
+    const { route: actionRoute, component: componentRoute } = await import(filePath);
+
+    addRoute(url, (request, reply) => {
+      const html = ReactDOMServer.renderToStaticMarkup(componentRoute());
+
+      reply.header("Content-type", "text/html");
+      reply.send(html);
+    });
+
+    addRoute(join("/api/", url), actionRoute);
   }
-
-  addReactRoute();
-};
-
-const addReactRoute = () => {
-  addRoute("/react", (request, reply) => {
-    const html = ReactDOMServer.renderToStaticMarkup(
-      React.createElement("h1", { className: "greeting" }, "Hello")
-    );
-
-    reply.header("Content-type", "text/html");
-    reply.send(html);
-  });
 };
 
 if (
@@ -60,5 +54,6 @@ if (
 module.exports = {
   getURL,
   addRoutes,
+  search,
   start,
 };

@@ -7,7 +7,6 @@
   "scripts": {
     "build:server": "esbuild-server-config",
     "start:server:dev": "dev-server start",
-    "start:web:dev": "web-dev-server start",
     "start": "node dist/server.js"
   },
   "devDependencies": {

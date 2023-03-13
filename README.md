@@ -39,7 +39,33 @@ JavaScript developer with full-stack experience and frontend passion. He runs a 
 
 # Agenda
 
+- introduction - @alex
+- example app @pavlik
+- theory - @alex
+  > a seamless server and browser runtime
+  - api
+  - overview frameworks
+    - express vs nextjs vs astro vs nextjs
+  - esbuild experiment
+  - how remix works
+    - how remix works
+- remix dive in - in practice - @pavlik
+  - app notes in depth
+    - what we wanted to achieve
+      - nested requests
+      - ssr
+      - no javascript
+  - overview frameworks
+    - astro vs nextjs
+- summary
+  - links
+    - [React Streaming In Depth: NextJS! Remix! DIY!- Jack Herrington](https://www.youtube.com/watch?v=o3JWb04DRIs)
+
 # Meetings
+
+## 2023-03-17
+
+- esbuild experiment - sat, progress updates
 
 ## 2023-03-05
 
@@ -49,20 +75,6 @@ JavaScript developer with full-stack experience and frontend passion. He runs a 
   - astra?
 - alex
   - esbuild experiment
-  - see assets
-  - todos:
-    - [x] dev routes server
-    - [x] add esbuild, jsx
-      - rename to jsx, add esbuild step leave only server export.
-        dev server build version should work?
-      - change dev server to use esbuild path and run build version
-    - dev routes client
-    - react ssr
-    - how remix works
-    --- optional ---
-    - tests package.json scripts production build
-    - add Virtual Machine context for importing routes and components
-    - exclude hardcoded "dist" from compile and dev server
   - [x] Remix ws: begin with example
   - Remix ws: ask mentorees help
 - agenda
@@ -73,6 +85,7 @@ JavaScript developer with full-stack experience and frontend passion. He runs a 
       - express vs nextjs vs astro vs nextjs
     - esbuild experiment
     - how remix works
+      - how remix works
   - remix dive in - in practice - pavlik
     - app notes in depth
       - what we wanted to achieve
@@ -207,3 +220,25 @@ alex
 ---
 
 This workshop will introduce participants to the Remix web framework, a new and innovative full-stack framework that allows developers to focus on building fast, resilient, and user-friendly web applications. The workshop will cover the basics of the framework and will guide participants through the process of building a simple web application from scratch. By the end of the workshop, participants will have a solid understanding of how to use Remix to create web applications that provide a seaml
+
+# esbuild experiment
+
+- see assets
+- todos:
+  - [x] dev routes server
+  - [x] add esbuild, jsx
+    - rename to jsx, add esbuild step leave only server export.
+      dev server build version should work?
+    - change dev server to use esbuild path and run build version
+  - ~~dev routes client~~
+  - react ssr
+  - load data from endpoint loaders
+  - how remix works
+  --- optional ---
+  - move & optimize transform and export to esbuild plugin
+  - add react router
+  - streams instead of file redner to sting
+    - hydrate react on client side
+  - tests package.json scripts production build
+  - add Virtual Machine context for importing routes and components
+  - exclude hardcoded "dist" from compile and dev server
