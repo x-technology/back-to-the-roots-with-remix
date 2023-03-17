@@ -42,21 +42,32 @@ JavaScript developer with full-stack experience and frontend passion. He runs a 
 - introduction - @alex
 - example app @pavlik
 - theory - @alex
-  > a seamless server and browser runtime
-  - api
-  - overview frameworks
-    - express vs nextjs vs astro vs nextjs
-  - esbuild experiment
+  - overview frameworks - @pavlik
+    - backend - express vs nestjs, fastify?
+      [![Frameworks Overview](https://blog.logrocket.com/wp-content/uploads/2022/10/node-js-frameworks-types.png)](https://blog.logrocket.com/comparing-top-node-js-frameworks-frontend-developers/)
+    - rendering strategies/frameworks
+      - static site generation/ssr
   - how remix works
-    - how remix works
+    - api
+      - [Deeper into Remix](https://remix.run/docs/en/v1/pages/technical-explanation)
+        - Compiler
+        - HTTP Handler and Adapters
+        - Server Framework
+        - Browser Framework
+      - auth
+      - cookies
+      - web worker
+      > a seamless server and browser runtime
+    - esbuild experiment
 - remix dive in - in practice - @pavlik
   - app notes in depth
     - what we wanted to achieve
       - nested requests
       - ssr
       - no javascript
-  - overview frameworks
-    - astro vs nextjs
+  - rendering frameworks comparison
+    - frontend - NextJS, Astro, Remix...
+      - api comparison
 - summary
   - links
     - [React Streaming In Depth: NextJS! Remix! DIY!- Jack Herrington](https://www.youtube.com/watch?v=o3JWb04DRIs)
@@ -231,16 +242,17 @@ This workshop will introduce participants to the Remix web framework, a new and 
       dev server build version should work?
     - change dev server to use esbuild path and run build version
   - ~~dev routes client~~
-  - react ssr
+  - [x] react ssr
   - load data from endpoint loaders
   - how remix works
   --- optional ---
+  - streams instead of file render to sting
+    - hydrate react on client side
+    - server side components?
   - move & optimize transform and export to esbuild plugin
     - use esbuild metafile analyze options to get information about outputs
     https://esbuild.github.io/api/#metafile
   - add react router?
-  - streams instead of file redner to sting
-    - hydrate react on client side
   - tests package.json scripts production build
   - add Virtual Machine context for importing routes and components
   - exclude hardcoded "dist" from compile and dev server
