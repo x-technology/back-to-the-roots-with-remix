@@ -42,7 +42,7 @@ JavaScript developer with full-stack experience and frontend passion. He runs a 
 - introduction - @alex
 - example app @pavlik
 - theory - @alex
-  - overview frameworks - @pavlik
+  - overview frameworks - @alex, @pavlik
     - backend - express vs nestjs, fastify?
       [![Frameworks Overview](https://blog.logrocket.com/wp-content/uploads/2022/10/node-js-frameworks-types.png)](https://blog.logrocket.com/comparing-top-node-js-frameworks-frontend-developers/)
     - rendering strategies/frameworks
