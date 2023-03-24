@@ -5,7 +5,7 @@
 Alex Korzhikov - March, 2023
 
 - How Remix Works
-  - Example App
+  - [Example App](https://codesandbox.io/p/sandbox/wandering-dream-xeomqw)
 - Esbuild Experiment
 - Summary
   - Problems
@@ -32,16 +32,36 @@ Alex Korzhikov - March, 2023
 - Play around esbuild and compile javascript code
 - Understand how remix works
 
-![First Idea](assets/esbuild-experiment-high-level-1.png)
+### Steps
+
+![First Steps](assets/esbuild-experiment-high-level.png)
+
+- dev routes server
+- add esbuild, jsx
+- ~~dev routes client~~
+- react ssr
 
 ### Summary
 
-![First Idea](assets/esbuild-experiment-high-level-1.png)
+![State of current implementation](assets/esbuild-experiment-outcome.png)
 
 ### Problems
 
+- load data from endpoint loaders
+- add Virtual Machine context for importing routes and components
+- exclude hardcoded "dist" from compile and dev server
+- streams instead of file render to sting
+  - hydrate react on client side
+  - server side components?
+- move & optimize transform and export to esbuild plugin
+  - use esbuild metafile analyze options to get information about outputs
+  https://esbuild.github.io/api/#metafile
+- add react router?
+
 ### Links
 
+- [Esbuild Remix Experiment](https://github.com/x-technology/back-to-the-roots-with-remix/tree/main/esbuild-experiment)
 - [Remix](https://remix.run/)
 - [React Streaming In Depth: NextJS! Remix! DIY!- Jack Herrington](https://www.youtube.com/watch?v=o3JWb04DRIs)
 - [Fundamentals of Redux Course from Dan Abramov](https://egghead.io/courses/fundamentals-of-redux-course-from-dan-abramov-bd5cc867)
+- [Test Remix App](https://github.com/korzio/testcodesandbix)
