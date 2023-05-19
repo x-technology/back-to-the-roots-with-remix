@@ -1,0 +1,35 @@
+app/
+├── routes/
+│   ├── about.tsx           // route is based on the static path
+│   ├── blog/               // route has an additional "/blog" segment in the URL
+│   │   ├── $postId.tsx     // dynamic params
+│   │   ├── categories.tsx  // static segments
+│   │   └── index.tsx       // index of the "/blog" directory
+│   ├── ($lang)/            // optional segment
+│   │   ├── $pid.tsx        // optional segment with dynamic params, examples: /samsung, /en/iphone, /de/oneplus
+│   │   ├── categories.tsx  // optional segment with static path takes priority.
+                            // Examples: /categories, /en/categories, /de/categories
+│   │   └── index.tsx
+│   ├── __app/              // pathless route. It won't be reflected in the URL
+│   │   ├── dashboard.tsx   // static route inside a pathless one
+│   │   └── $userId/        // pathless route with a dynamic param
+│   │       └── profile.tsx // pathless route with a static path
+│   ├── __app.tsx           // layout for pathless route
+│   ├── $.tsx               // splat route (catch-all routes)
+│   ├── blog.authors.tsx    // dot delimiter
+│   ├── blog.tsx            // layout for a regular route
+│   └── index.tsx
+└── root.tsx
+
+pages/index.js → /
+pages/blog/index.js → /blog
+pages/blog/first-post.js → /blog/first-post
+pages/dashboard/settings/username.js → /dashboard/settings/username
+pages/blog/[slug].js → /blog/:slug (/blog/hello-world)
+pages/[username]/settings.js → /:username/settings (/foo/settings)
+pages/post/[...all].js → /post/* (/post/2020/id/title)
+
+Stable version of NextJS:
+1. No convenient layouts
+2. No pathless routes
+3. No optional params

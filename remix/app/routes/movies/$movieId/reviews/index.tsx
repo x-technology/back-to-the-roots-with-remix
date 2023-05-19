@@ -2,9 +2,10 @@ import type { LinksFunction, LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { Link, Outlet, useParams, useLoaderData } from "@remix-run/react";
 
-import reviews from "../../../../mocks/reviews";
+import reviews from "~/mocks/reviews";
+import sleep from "~/utils/sleep";
 export const loader = async ({ params: { movieId } }: LoaderArgs) => {
-  await new Promise((resolve) => setTimeout(resolve, 5000));
+  await sleep();
   const movieReviews = reviews.filter(
     ({ movie_id }) => movieId === String(movie_id)
   );

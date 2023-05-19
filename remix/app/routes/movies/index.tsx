@@ -2,10 +2,11 @@ import type { LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData, Outlet, Link } from "@remix-run/react";
 
-import movies from "../../mocks/movies";
+import movies from "~/mocks/movies";
+import sleep from "~/utils/sleep";
 
 export const loader = async ({ params }: LoaderArgs) => {
-  await new Promise((resolve) => setTimeout(resolve, 5000));
+  await sleep();
   return json({
     movies,
   });
