@@ -54,11 +54,13 @@ JavaScript developer with full-stack experience and frontend passion. He runs a 
         - HTTP Handler and Adapters
         - Server Framework
         - Browser Framework
-      - auth
+      - ~~auth~~
+        - session
       - cookies
       - web worker
       > a seamless server and browser runtime
     - esbuild experiment
+      - [ ] existing remix plugin example
 - remix dive in - in practice - @pavlik
   - app notes in depth
     - what we wanted to achieve
@@ -73,6 +75,10 @@ JavaScript developer with full-stack experience and frontend passion. He runs a 
     - [React Streaming In Depth: NextJS! Remix! DIY!- Jack Herrington](https://www.youtube.com/watch?v=o3JWb04DRIs)
 
 # Meetings
+
+## 2023-03-23
+
+- slides from pavlik https://excalidraw.com/#json=cPxoCmTRFZVfhIRiFfyBI,-8sf8ck2VqPiCxjwCYMjtQ
 
 ## 2023-03-17
 

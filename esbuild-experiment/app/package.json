@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "build:server": "esbuild-server-config",
-    "start:server:dev": "dev-server start",
-    "start": "node dist/server.js"
+    "start:server:dev": "dev-server start"
   },
   "devDependencies": {
     "@esbuild-experiment/dev-server": "1.0.0",

@@ -50,6 +50,7 @@ Alex Korzhikov - March, 2023
 - load data from endpoint loaders
 - add Virtual Machine context for importing routes and components
 - exclude hardcoded "dist" from compile and dev server
+- compile all the routes into single manifest
 - streams instead of file render to sting
   - hydrate react on client side
   - server side components?
